@@ -1,0 +1,272 @@
+<Project>
+  <Name>Commercial</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>ContestablePoint</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>ContestablePoint</Name>
+        <Access>Public</Access>
+        <Location left="133" top="159" />
+        <Size width="309" height="332" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public bool mActivated</Member>
+        <Member type="Field">public UnityEvent mCountdownTimer</Member>
+        <Member type="Field">public int mIncrementalAmount</Member>
+        <Member type="Field">public int mIncrementalCapturePoint</Member>
+        <Member type="Field">public Vector3 mInfluenceSize</Member>
+        <Member type="Field">public InteractableMasks mMask</Member>
+        <Member type="Field">public string mName</Member>
+        <Member type="Field">public float mTimerAmount</Member>
+        <Member type="Field">private float mCurrentTimer</Member>
+        <Member type="Method">public IEnumerator BeginCountdown()</Member>
+        <Member type="Method">public void CapturePoint()</Member>
+        <Member type="Method">public void InitializeZoneOfInfluence()</Member>
+        <Member type="Method">public bool IsPointContestable(InteractableMask pMaskType)</Member>
+        <Member type="Method">public void StopCountdown()</Member>
+        <Member type="Method">public void WipeCountDown()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Enum">
+        <Name>InteractableMask</Name>
+        <Access>Public</Access>
+        <Location left="511" top="159" />
+        <Size width="162" height="95" />
+        <Collapsed>False</Collapsed>
+        <Value>Hunter</Value>
+        <Value>Ghost</Value>
+      </Entity>
+      <Entity type="Class">
+        <Name>AnimationSequencer</Name>
+        <Access>Public</Access>
+        <Location left="708" top="306" />
+        <Size width="162" height="128" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public Animation mAnimation</Member>
+        <Member type="Field">public float mAnimationDuration</Member>
+        <Member type="Method">public void PlayAnimation()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Comment">
+        <Text>Would actviate the play animation upon reaching the IncrementalCapturePoint for all entities of mask type within the collision trigger sphere</Text>
+        <Location left="463" top="385" />
+        <Size width="207" height="102" />
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Association" first="0" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="0" second="2">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>ActivatingAbility</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Structure">
+        <Name>PlayerAbility</Name>
+        <Access>Public</Access>
+        <Location left="493" top="199" />
+        <Size width="233" height="196" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public string mAbilityName</Member>
+        <Member type="Field">public string mAbilityCooldown</Member>
+        <Member type="Field">public UnityEvent mCooldownSequence</Member>
+        <Member type="Method">public void StartCooldown()</Member>
+        <Member type="Method">public void StopCooldown()</Member>
+        <Member type="Method">public void ResetCooldown()</Member>
+        <Member type="Method">public IEnumerator CooldownTimer()</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>HunterThrowNet</Name>
+        <Access>Public</Access>
+        <Location left="590" top="468" />
+        <Size width="162" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void DisableTarget()</Member>
+        <Member type="Method">public void LaunchNet()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GhostSpook</Name>
+        <Access>Public</Access>
+        <Location left="399" top="468" />
+        <Size width="162" height="94" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void StunTarget()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>NetObject</Name>
+        <Access>Public</Access>
+        <Location left="845" top="468" />
+        <Size width="214" height="145" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public Vector3 mCurrentPosition</Member>
+        <Member type="Field">public Vector3 mTargetPosition</Member>
+        <Member type="Method">public void UpdatePositionOffsets()</Member>
+        <Member type="Method">public void CheckCollision()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Association" first="2" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="1" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="1" second="3">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Hosting</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>HostSingleton</Name>
+        <Access>Public</Access>
+        <Location left="612" top="308" />
+        <Size width="194" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public int mMaximumGhosts</Member>
+        <Member type="Field">public int mMaximumHunters</Member>
+        <Member type="Field">public List&lt;Player&gt; mPlayers</Member>
+        <Member type="Field">private static HostSingleton mInstance</Member>
+        <Member type="Method">public void AcceptConnection()</Member>
+        <Member type="Method">public void GenerateNewCode()</Member>
+        <Member type="Method">public void GenerateNewPlayer()</Member>
+        <Member type="Method">public static HostSingleton GetInstance()</Member>
+        <Member type="Method">public void TerminateConnection()</Member>
+        <Member type="Method">public void UpdateUI()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Player</Name>
+        <Access>Public</Access>
+        <Location left="948" top="308" />
+        <Size width="218" height="162" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public Controller mAirConsoleController</Member>
+        <Member type="Field">public string mName</Member>
+        <Member type="Field">public InteractableMask mPlayerType</Member>
+        <Member type="Field">public PlayerAbility mPrimaryAbility</Member>
+        <Member type="Field">public PlayerAbility mSecondaryAbility</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Controller</Name>
+        <Access>Public</Access>
+        <Location left="1441" top="308" />
+        <Size width="237" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public bool AbilityButtonPressPrimary</Member>
+        <Member type="Field">public bool AbilityButtonPressSecondary</Member>
+        <Member type="Field">public Vector3 mMovement</Member>
+        <Member type="Field">public bool mMovementStickMoved</Member>
+        <Member type="Field">public Vector3 mRotation</Member>
+        <Member type="Method">public bool IsButtonPressed()</Member>
+        <Member type="Method">public bool IsMoved()</Member>
+        <Member type="Method">public void Rotate()</Member>
+        <Member type="Method">public void Translate()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Structure">
+        <Name>PlayerAbility</Name>
+        <Access>Public</Access>
+        <Location left="911" top="523" />
+        <Size width="233" height="196" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public string mAbilityCooldown</Member>
+        <Member type="Field">public string mAbilityName</Member>
+        <Member type="Field">public UnityEvent mCooldownSequence</Member>
+        <Member type="Method">public IEnumerator CooldownTimer()</Member>
+        <Member type="Method">public void ResetCooldown()</Member>
+        <Member type="Method">public void StartCooldown()</Member>
+        <Member type="Method">public void StopCooldown()</Member>
+      </Entity>
+      <Entity type="Enum">
+        <Name>InteractableMask</Name>
+        <Access>Public</Access>
+        <Location left="1074" top="150" />
+        <Size width="162" height="95" />
+        <Collapsed>False</Collapsed>
+        <Value>Hunter</Value>
+        <Value>Ghost</Value>
+      </Entity>
+      <Entity type="Comment">
+        <Text>If user presses a button, it will return which button (0 - primary, 1 - secondary) to the player to carry out the respective abilities</Text>
+        <Location left="1207" top="401" />
+        <Size width="215" height="83" />
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Association" first="1" second="3">
+        <Label>Primary, Secondary ability</Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="1" second="4">
+        <Label>PlayerType</Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="0" second="1">
+        <Label>AmountOfPlayers</Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1..*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="1" second="2">
+        <Label>Controller</Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
